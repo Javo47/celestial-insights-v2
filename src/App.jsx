@@ -34,7 +34,6 @@ const App = () => {
 
         {/* Lower-Half */}
         <div className="m-4 grid grid-cols-1 gap-4 sm:grid-cols-12">
-          {/* Test Comment */}
           <Rectangle labeling="Traits" />
           <div className="min-h-[282px] rounded-lg bg-teal-500 shadow sm:col-span-6 flex flex-col items-center justify-start font-uncial">
             <h2 className="text-3xl mt-4">Compatibility</h2>
