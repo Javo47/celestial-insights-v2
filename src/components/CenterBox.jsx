@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const CenterBox = ({centerContent}) => {
+const CenterBox = ({ centerContent }) => {
   return (
-    <div className={`min-h-[500px] max-h-[500px] rounded-lg shadow ${centerContent} bg-contain bg-no-repeat bg-purple-500 bg-center`}></div>
-  )
-}
+    <div
+      className={`min-h-[500px] max-h-[500px] rounded-lg shadow ${centerContent} bg-contain bg-no-repeat bg-purple-500 bg-center`}
+    ></div>
+  );
+};
 
-export default CenterBox
+export default CenterBox;

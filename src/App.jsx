@@ -1,3 +1,4 @@
+import React from "react";
 import MedSquare from "./components/MedSquare";
 import Bar from "./components/Bar";
 import CenterBox from "./components/CenterBox";

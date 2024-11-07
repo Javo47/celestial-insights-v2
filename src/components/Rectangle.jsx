@@ -1,3 +1,4 @@
+import React from "react";
 import signs from "../signs.json";
 import jobs from "../jobs.json"
 
