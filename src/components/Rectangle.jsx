@@ -1,6 +1,6 @@
 import React from "react";
 import signs from "../signs.json";
-import jobs from "../jobs.json"
+import jobs from "../jobs.json";
 
 const Rectangle = ({ labeling, listItems, bg = "bg-transparent" }) => {
   return (
@@ -9,9 +9,8 @@ const Rectangle = ({ labeling, listItems, bg = "bg-transparent" }) => {
     >
       <h2 className="text-3xl mt-4">{labeling}</h2>
       <ul className="m-4 flex flex-col justify-around h-full">
-        <li>{`Female Traits: ${signs[listItems].traits.female}` || "Nothing"}</li>
-        <li>{`Male Traits: ${signs[1].traits.male}`}</li>
-        
+        <li></li>
+        <li></li>
       </ul>
     </div>
   );
