@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "sign": "Aquarius",
+      "lNumber": "33"
+    }
+  ]
+}
