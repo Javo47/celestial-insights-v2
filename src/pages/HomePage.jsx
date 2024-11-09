@@ -4,8 +4,17 @@ import Bar from "../components/Bar";
 import CenterBox from "../components/CenterBox";
 import Domino from "../components/Domino";
 import Rectangle from "../components/Rectangle";
+import { useParams, useLoaderData } from "react-router-dom";
+
+const dataLoader = async ({ params }) => {
+  const res = await fetch(`/api/users/${params.id}`);
+  const data = await res.json();
+  return data;
+};
 
 const HomePage = () => {
+  const sign = useLoaderData();
+
   return (
     <>
       <div className="container bg-slate-100">
