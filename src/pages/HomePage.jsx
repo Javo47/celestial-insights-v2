@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import MedSquare from "../components/MedSquare";
 import Bar from "../components/Bar";
 import CenterBox from "../components/CenterBox";
@@ -10,10 +10,53 @@ import users from "../users.json";
 import UserDetails from "../components/userDetails";
 
 const HomePage = () => {
-
+  let sign = "Unknown";
+  let signRes = " ";
   const user = UserDetails();
 
-  console.log(user.name);
+  if (user != null) {
+    console.log(user.sign);
+    sign = user.sign;
+  }
+
+  switch (sign) {
+    case "Aquarius":
+      signRes = signs.zodiac[0];
+      break;
+    case "Pisces":
+      signRes = signs.zodiac[1];
+      break;
+    case "Aries":
+      signRes = signs.zodiac[2];
+      break;
+    case "Taurus":
+      signRes = signs.zodiac[3];
+      break;
+    case "Gemini":
+      signRes = signs.zodiac[4];
+      break;
+    case "Cancer":
+      signRes = signs.zodiac[5];
+      break;
+    case "Leo":
+      signRes = signs.zodiac[6];
+      break;
+    case "Virgo":
+      signRes = signs.zodiac[7];
+      break;
+    case "Libra":
+      signRes = signs.zodiac[8];
+      break;
+    case "Scorpio":
+      signRes = signs.zodiac[9];
+      break;
+    case "Sagittarius":
+      signRes = signs.zodiac[10];
+      break;
+    case "Capricorn":
+      signRes = signs.zodiac[11];
+      break;
+  }
 
   return (
     <>
@@ -28,14 +71,14 @@ const HomePage = () => {
 
           {/* Middle */}
           <div className="order-first grid min-h-[100px] gap-y-4 rounded-lg lg:order-2 lg:col-span-6">
-            <Bar zodiacSign={signs.zodiac[0].name} />
+            <Bar zodiacSign={signRes.name} />
             <CenterBox centerContent="bg-aquarius" />
           </div>
 
           {/* Upper-Right */}
           <div className="order-3 grid gap-y-5 rounded-lg lg:order-3 lg:col-span-3">
             <div className="rounded-lg grid grid-cols-2 gap-4">
-              <Domino labeling={user.name} />
+              <Domino labeling=" " />
               <Domino labeling="Type" />
             </div>
             <MedSquare labeling="Planet" />
