@@ -8,10 +8,12 @@ import { useParams, useLoaderData } from "react-router-dom";
 import signs from "../signs.json";
 import users from "../users.json";
 import UserDetails from "../components/userDetails";
+import SignResolver from "../components/SignResolver";
 
 const HomePage = () => {
   let sign = "Unknown";
   let signRes = " ";
+  let element = " ";
   const user = UserDetails();
 
   if (user != null) {
@@ -19,44 +21,46 @@ const HomePage = () => {
     sign = user.sign;
   }
 
-  switch (sign) {
-    case "Aquarius":
-      signRes = signs.zodiac[0];
-      break;
-    case "Pisces":
-      signRes = signs.zodiac[1];
-      break;
-    case "Aries":
-      signRes = signs.zodiac[2];
-      break;
-    case "Taurus":
-      signRes = signs.zodiac[3];
-      break;
-    case "Gemini":
-      signRes = signs.zodiac[4];
-      break;
-    case "Cancer":
-      signRes = signs.zodiac[5];
-      break;
-    case "Leo":
-      signRes = signs.zodiac[6];
-      break;
-    case "Virgo":
-      signRes = signs.zodiac[7];
-      break;
-    case "Libra":
-      signRes = signs.zodiac[8];
-      break;
-    case "Scorpio":
-      signRes = signs.zodiac[9];
-      break;
-    case "Sagittarius":
-      signRes = signs.zodiac[10];
-      break;
-    case "Capricorn":
-      signRes = signs.zodiac[11];
-      break;
-  }
+  // switch (sign) {
+  //   case "Aquarius":
+  //     signRes = signs.zodiac[0];
+  //     break;
+  //   case "Pisces":
+  //     signRes = signs.zodiac[1];
+  //     break;
+  //   case "Aries":
+  //     signRes = signs.zodiac[2];
+  //     break;
+  //   case "Taurus":
+  //     signRes = signs.zodiac[3];
+  //     break;
+  //   case "Gemini":
+  //     signRes = signs.zodiac[4];
+  //     break;
+  //   case "Cancer":
+  //     signRes = signs.zodiac[5];
+  //     break;
+  //   case "Leo":
+  //     signRes = signs.zodiac[6];
+  //     break;
+  //   case "Virgo":
+  //     signRes = signs.zodiac[7];
+  //     break;
+  //   case "Libra":
+  //     signRes = signs.zodiac[8];
+  //     break;
+  //   case "Scorpio":
+  //     signRes = signs.zodiac[9];
+  //     break;
+  //   case "Sagittarius":
+  //     signRes = signs.zodiac[10];
+  //     break;
+  //   case "Capricorn":
+  //     signRes = signs.zodiac[11];
+  //     break;
+  // }
+
+  signRes = SignResolver(sign);
 
   return (
     <>
@@ -65,7 +69,7 @@ const HomePage = () => {
         <div className="order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 lg:grid-cols-12">
           {/* Upper-Left */}
           <div className="grid gap-y-5 rounded-lg lg:col-span-3">
-            <MedSquare labeling=" " />
+            <MedSquare labeling="Symbol" />
             <MedSquare labeling="Constellation" />
           </div>
 
@@ -78,7 +82,7 @@ const HomePage = () => {
           {/* Upper-Right */}
           <div className="order-3 grid gap-y-5 rounded-lg lg:order-3 lg:col-span-3">
             <div className="rounded-lg grid grid-cols-2 gap-4">
-              <Domino labeling=" " />
+              <Domino labeling="Element " />
               <Domino labeling="Type" />
             </div>
             <MedSquare labeling="Planet" />
