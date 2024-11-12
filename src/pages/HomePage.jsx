@@ -17,48 +17,9 @@ const HomePage = () => {
   const user = UserDetails();
 
   if (user != null) {
-    console.log(user.sign);
+    //console.log(user.sign);
     sign = user.sign;
   }
-
-  // switch (sign) {
-  //   case "Aquarius":
-  //     signRes = signs.zodiac[0];
-  //     break;
-  //   case "Pisces":
-  //     signRes = signs.zodiac[1];
-  //     break;
-  //   case "Aries":
-  //     signRes = signs.zodiac[2];
-  //     break;
-  //   case "Taurus":
-  //     signRes = signs.zodiac[3];
-  //     break;
-  //   case "Gemini":
-  //     signRes = signs.zodiac[4];
-  //     break;
-  //   case "Cancer":
-  //     signRes = signs.zodiac[5];
-  //     break;
-  //   case "Leo":
-  //     signRes = signs.zodiac[6];
-  //     break;
-  //   case "Virgo":
-  //     signRes = signs.zodiac[7];
-  //     break;
-  //   case "Libra":
-  //     signRes = signs.zodiac[8];
-  //     break;
-  //   case "Scorpio":
-  //     signRes = signs.zodiac[9];
-  //     break;
-  //   case "Sagittarius":
-  //     signRes = signs.zodiac[10];
-  //     break;
-  //   case "Capricorn":
-  //     signRes = signs.zodiac[11];
-  //     break;
-  // }
 
   signRes = SignResolver(sign);
 
@@ -75,14 +36,14 @@ const HomePage = () => {
 
           {/* Middle */}
           <div className="order-first grid min-h-[100px] gap-y-4 rounded-lg lg:order-2 lg:col-span-6">
-            <Bar zodiacSign={signRes.name} />
+            <Bar zodiacSign={signRes.name} dateRange={signRes.dates} />
             <CenterBox centerContent="bg-aquarius" />
           </div>
 
           {/* Upper-Right */}
           <div className="order-3 grid gap-y-5 rounded-lg lg:order-3 lg:col-span-3">
             <div className="rounded-lg grid grid-cols-2 gap-4">
-              <Domino labeling="Element " />
+              <Domino labeling="Element" image={signRes.element} />
               <Domino labeling="Type" />
             </div>
             <MedSquare labeling="Planet" />
