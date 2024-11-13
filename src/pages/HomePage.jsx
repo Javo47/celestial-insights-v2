@@ -13,11 +13,9 @@ import SignResolver from "../components/SignResolver";
 const HomePage = () => {
   let sign = "Unknown";
   let signRes = " ";
-  let element = " ";
   const user = UserDetails();
 
   if (user != null) {
-    //console.log(user.sign);
     sign = user.sign;
   }
 
@@ -30,21 +28,21 @@ const HomePage = () => {
         <div className="order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 lg:grid-cols-12">
           {/* Upper-Left */}
           <div className="grid gap-y-5 rounded-lg lg:col-span-3">
-            <MedSquare labeling="Symbol" />
+            <MedSquare labeling="Element" image={signRes.element} />
             <MedSquare labeling="Constellation" />
           </div>
 
           {/* Middle */}
           <div className="order-first grid min-h-[100px] gap-y-4 rounded-lg lg:order-2 lg:col-span-6">
             <Bar zodiacSign={signRes.name} dateRange={signRes.dates} />
-            <CenterBox centerContent="bg-aquarius" />
+            <CenterBox image={signRes.name} />
           </div>
 
           {/* Upper-Right */}
           <div className="order-3 grid gap-y-5 rounded-lg lg:order-3 lg:col-span-3">
             <div className="rounded-lg grid grid-cols-2 gap-4">
-              <Domino labeling="Element" image={signRes.element} />
-              <Domino labeling="Type" />
+              <Domino labeling="Symbol" image={signRes.element} />
+              <Domino labeling="Type" image={signRes.signType} />
             </div>
             <MedSquare labeling="Planet" />
           </div>

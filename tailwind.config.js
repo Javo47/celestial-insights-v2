@@ -11,7 +11,7 @@ export default {
         uncial: ["Uncial Antiqua", "system-ui"],
       },
       backgroundImage: {
-        aquarius: "url('/src/assets/images/avatar_aquarius.jpg')",
+        aquarius: "url('/src/assets/images/avatars/avatar_aquarius.jpg')",
       },
     },
   },
