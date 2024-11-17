@@ -22,11 +22,10 @@ const MedSquare = ({ labeling = "Untitled", image }) => {
   console.log(labeling);
 
   if (image instanceof Array) {
-    console.log("Is array!");
     arrLength = image.length;
     [imageA, imageB] = image;
 
-    console.log(imageB);
+    //console.log(imageB);
   }
 
   image = ImageResolver(image);

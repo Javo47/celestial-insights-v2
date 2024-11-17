@@ -13,10 +13,12 @@ import SignResolver from "../components/SignResolver";
 const HomePage = () => {
   let sign = "Unknown";
   let signRes = " ";
+  let userGender = " ";
   const user = UserDetails();
 
   if (user != null) {
     sign = user.sign;
+    userGender = user.gender;
   }
 
   signRes = SignResolver(sign);
@@ -29,7 +31,7 @@ const HomePage = () => {
           {/* Upper-Left */}
           <div className="grid gap-y-5 rounded-lg lg:col-span-3">
             <MedSquare labeling="Element" image={signRes.element} />
-            <MedSquare labeling="Constellation"image={signRes.rulingPlanets} />
+            <MedSquare labeling="Constellation" image={signRes.rulingPlanets} />
           </div>
 
           {/* Middle */}
@@ -50,8 +52,12 @@ const HomePage = () => {
 
         {/* Lower-Half */}
         <div className="m-4 grid grid-cols-1 gap-4 lg:grid-cols-12">
-          <Rectangle labeling="Traits" />
-          <Rectangle labeling="Compatibility" />
+          <Rectangle
+            labeling="Traits"
+            listItems={signRes.traits}
+            gender={userGender}
+          />
+          <Rectangle labeling="Compatibility" listItems={signRes.traits} />
         </div>
       </div>
     </>

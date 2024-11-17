@@ -4,19 +4,22 @@
       "id": "1",
       "name": "John Doe",
       "sign": "Aquarius",
-      "lNumber": "33"
+      "lNumber": "33",
+      "gender": "male"
     },
     {
       "id": "2345",
       "name": "Jane Doe",
       "sign": "Aries",
-      "lNumber": "33"
+      "lNumber": "33",
+      "gender": "other"
     },
     {
       "id": "1521",
       "name": "Deanna",
       "sign": "Virgo",
-      "lNumber": "33"
+      "lNumber": "33",
+      "gender": "female"
     }
   ]
 }
