@@ -29,7 +29,7 @@ const HomePage = () => {
           {/* Upper-Left */}
           <div className="grid gap-y-5 rounded-lg lg:col-span-3">
             <MedSquare labeling="Element" image={signRes.element} />
-            <MedSquare labeling="Constellation" />
+            <MedSquare labeling="Constellation"image={signRes.rulingPlanets} />
           </div>
 
           {/* Middle */}
@@ -44,7 +44,7 @@ const HomePage = () => {
               <Domino labeling="Symbol" image={signRes.element} />
               <Domino labeling="Type" image={signRes.signType} />
             </div>
-            <MedSquare labeling="Planet" />
+            <MedSquare labeling="Planet" image={signRes.rulingPlanets} />
           </div>
         </div>
 

@@ -5,7 +5,7 @@
       "dates": "January 20 – February 18",
       "element": "Air",
       "signType": "Masculine",
-      "rulingPlanets": { "modern": "Uranus", "traditional": "Saturn" },
+      "rulingPlanets": ["Uranus", "Saturn"],
       "planetTraits": {
         "Uranus": ["Transformation", "Innovation", "Rebellion", "Vision"],
         "Saturn": ["Discipline", "Structure", "Responsibility"]
