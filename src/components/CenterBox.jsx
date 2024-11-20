@@ -2,7 +2,6 @@ import React from "react";
 import ImageResolver from "./ImageResolver";
 
 const CenterBox = ({ image }) => {
-  console.log(image);
   image = ImageResolver(image);
 
   return (

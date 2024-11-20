@@ -11,15 +11,14 @@ import MainLayout from "./layouts/MainLayout";
 import UserDetails from "./components/userDetails";
 
 const App = () => {
-  const addUser = (newUser) => {
-    console.log("test");
-    // const res = await fetch("/api/users", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(newUser),
-    // });
+  const addUser = async (newUser) => {
+    const res = await fetch("/api/users/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    });
   };
 
   const router = createBrowserRouter(

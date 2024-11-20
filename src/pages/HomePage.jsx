@@ -42,7 +42,7 @@ const HomePage = () => {
   return (
     <>
       <div className="bg-slate-300">
-        <div className={`container  py-1 //${themeColor}`}>
+        <div className={`container  py-1 ${themeColor}`}>
           {/* Upper-Half */}
           <div className="order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 lg:grid-cols-12">
             {/* Upper-Left */}

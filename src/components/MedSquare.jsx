@@ -4,17 +4,6 @@ import SignResolver from "./SignResolver";
 import ImageResolver from "./ImageResolver";
 
 const MedSquare = ({ labeling = "Untitled", image }) => {
-  // let signRes = " ";
-  // const user = UserDetails();
-
-  // if (user != null) {
-  //   signRes = SignResolver(user.sign);
-  // }
-
-  // if (image != null) {
-  //   image = signRes.element;
-  // }
-
   let arrLength = 0;
 
   let imageA, imageB;
@@ -22,8 +11,6 @@ const MedSquare = ({ labeling = "Untitled", image }) => {
   if (image instanceof Array) {
     arrLength = image.length;
     [imageA, imageB] = image;
-
-    //console.log(imageB);
   }
 
   image = ImageResolver(image);

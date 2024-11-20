@@ -1,28 +1,33 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import * as uuid from "uuid";
+import BirthResolver from "../components/BirthResolver";
+import LuckyNumberFinder from "../components/LuckyNumberFinder";
 
 const SignUpPage = ({ signUpSubmit }) => {
   const [name, setName] = useState();
   const [gender, setGender] = useState("Male");
   const [birthDate, setBirthDate] = useState("1999-01-01");
+  let sign = BirthResolver(birthDate);
+  let lNumber = LuckyNumberFinder(birthDate);
 
   const navigate = useNavigate();
-  const { id } = useParams;
+  const id = uuid.v4();
 
   const submitForm = (e) => {
     e.preventDefault();
 
-    // const newUser = {
-    //   name,
-    //   sign,
-    //   lNumber,
-    //   gender,
-    // };
+    const newUser = {
+      id,
+      name,
+      sign,
+      lNumber,
+      gender,
+    };
 
-    const newUser = "test";
     signUpSubmit(newUser);
 
-    return navigate("/users/1");
+    return navigate(`/users/${id}`);
   };
 
   return (
