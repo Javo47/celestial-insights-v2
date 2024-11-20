@@ -19,8 +19,6 @@ const MedSquare = ({ labeling = "Untitled", image }) => {
 
   let imageA, imageB;
 
-  console.log(labeling);
-
   if (image instanceof Array) {
     arrLength = image.length;
     [imageA, imageB] = image;

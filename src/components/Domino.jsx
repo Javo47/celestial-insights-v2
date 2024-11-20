@@ -26,7 +26,7 @@ const Domino = ({ labeling, image }) => {
   return (
     <>
       <div
-        className={`min-h-[282px] rounded-lg  shadow flex flex-col items-center justify-between font-uncial`}
+        className={`min-h-[282px] rounded-lg shadow flex flex-col items-center justify-between font-uncial`}
       >
         <h2 className="text-xl my-8">{labeling}</h2>
         <div
