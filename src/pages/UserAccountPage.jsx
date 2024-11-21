@@ -26,6 +26,7 @@ const UserAccountPage = ({ deleteAccount }) => {
     navigate("/sign-up");
   };
 
+  // Branch Switch Test
   return (
     <div className="mx-[500px] my-[300px] bg-white rounded-xl shadow-md">
       <div className="p-4">
@@ -90,4 +91,3 @@ const dataLoader = async ({ params }) => {
 };
 
 export { UserAccountPage as default, dataLoader };
-
