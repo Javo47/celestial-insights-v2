@@ -3,6 +3,7 @@
     {
       "id": "1",
       "name": "John Doe",
+      "birthDate": "1993-02-18",
       "sign": "Aquarius",
       "lNumber": "33",
       "gender": "male"
@@ -10,6 +11,7 @@
     {
       "id": "2345",
       "name": "Jane Doe",
+      "birthDate": "2005-05-05",
       "sign": "Aries",
       "lNumber": "33",
       "gender": "other"
@@ -17,9 +19,18 @@
     {
       "id": "1521",
       "name": "Deanna",
+      "birthDate": "1999-09-21",
       "sign": "Virgo",
       "lNumber": "33",
       "gender": "female"
+    },
+    {
+      "id": "dd5c4e13-5eb7-4932-a94d-db365652644d",
+      "name": "DOB TEST",
+      "birthDate": "2005-05-05",
+      "sign": "Taurus",
+      "lNumber": "17",
+      "gender": "Male"
     }
   ]
 }

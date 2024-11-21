@@ -20,6 +20,7 @@ const SignUpPage = ({ signUpSubmit }) => {
     const newUser = {
       id,
       name,
+      birthDate,
       sign,
       lNumber,
       gender,

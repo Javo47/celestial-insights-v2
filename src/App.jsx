@@ -8,6 +8,7 @@ import {
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import MainLayout from "./layouts/MainLayout";
+import UserAccountPage from "./pages/UserAccountPage";
 import UserDetails from "./components/userDetails";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
           element={<SignUpPage signUpSubmit={addUser} />}
         />
         <Route path="/users/:id" element={<HomePage />} />
+        <Route path="/users/:id/account" element={<UserAccountPage />} />
         {/* <Route path="/users/test" element={<UserDetails />} /> */}
       </Route>
     )
