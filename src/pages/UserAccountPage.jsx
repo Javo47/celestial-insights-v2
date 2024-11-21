@@ -1,15 +1,30 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLoaderData, useParams } from "react-router-dom";
 import UserDetails from "../components/userDetails";
 import { useState } from "react";
 
-const UserAccountPage = () => {
+const UserAccountPage = ({ deleteAccount }) => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const acct = useLoaderData();
   let user = " ";
   const userData = UserDetails();
 
   if (userData != null) {
     user = userData;
   }
+
+  const onDeleteClick = (acctId) => {
+    const confirm = window.confirm(
+      "Are you sure you want to delete your account?"
+    );
+
+    if (!confirm) return;
+
+    deleteAccount(acctId);
+
+    navigate("/sign-up");
+  };
 
   return (
     <div className="mx-[500px] my-[300px] bg-white rounded-xl shadow-md">
@@ -56,16 +71,23 @@ const UserAccountPage = () => {
         <div className="border border-gray-100 mb-5"></div>
 
         <div className="flex flex-col lg:flex-row justify-start mb-4">
-          <Link
-            to="#"
+          <button
+            onClick={() => onDeleteClick(acct.id)}
             className="h-[36px] bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-center text-sm"
           >
             Delete Account
-          </Link>
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default UserAccountPage;
+const dataLoader = async ({ params }) => {
+  const res = await fetch(`/api/users/${params.id}`);
+  const data = await res.json();
+  return data;
+};
+
+export { UserAccountPage as default, dataLoader };
+

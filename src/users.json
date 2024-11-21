@@ -23,14 +23,6 @@
       "sign": "Virgo",
       "lNumber": "33",
       "gender": "female"
-    },
-    {
-      "id": "dd5c4e13-5eb7-4932-a94d-db365652644d",
-      "name": "DOB TEST",
-      "birthDate": "2005-05-05",
-      "sign": "Taurus",
-      "lNumber": "17",
-      "gender": "Male"
     }
   ]
 }
