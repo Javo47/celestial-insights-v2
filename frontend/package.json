@@ -1,5 +1,5 @@
 {
-  "name": "celestial-insights-v2",
+  "name": "frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +11,7 @@
     "server": "json-server --watch src/users.json --port 5000"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0",
