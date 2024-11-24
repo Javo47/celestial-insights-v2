@@ -21,7 +21,7 @@ function ImageResolver(image) {
       image = `bg-[url("/src/assets/images/elements/element_water.jpg")]`;
       break;
     case "Aquarius":
-      image = `bg-[url("/src/assets/images/avatars/avatar_aquarius.jpg")]`;
+      image = `bg-[url('/src/assets/images/avatars/avatar_aquarius.jpg')]`;
       break;
     case "Aries":
       image = `bg-[url("/src/assets/images/avatars/avatar_aries.jpg")]`;
@@ -57,6 +57,7 @@ function ImageResolver(image) {
       image = `bg-[url("/src/assets/images/avatars/avatar_virgo.jpg")]`;
       break;
   }
+  console.log(image);
   return image;
 }
 

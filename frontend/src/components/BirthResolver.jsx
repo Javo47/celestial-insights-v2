@@ -33,12 +33,6 @@ function BirthResolver(dob) {
     zodiacSign = "Capricorn";
   }
 
-  console.log(date);
-  console.log(year);
-  console.log(month);
-  console.log(day);
-  console.log(zodiacSign);
-
   return zodiacSign;
 }
 

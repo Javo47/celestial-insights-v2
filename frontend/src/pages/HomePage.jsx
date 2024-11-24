@@ -5,6 +5,7 @@ import CenterBox from "../components/CenterBox";
 import Domino from "../components/Domino";
 import Rectangle from "../components/Rectangle";
 import { useParams, useLoaderData } from "react-router-dom";
+import axios from "axios";
 import signs from "../signs.json";
 import users from "../users.json";
 import UserDetails from "../components/userDetails";
@@ -15,14 +16,29 @@ const HomePage = () => {
   let signRes = " ";
   let userGender = " ";
   let themeColor = "bg-slate-200";
-  const user = UserDetails();
+  // const user = UserDetails();
+
+  // if (user != null) {
+  //   sign = user.sign;
+  //   userGender = user.gender;
+  // }
+
+  const { id } = useParams();
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    axios
+      .get(`/api/getUser/${id}`)
+      .then((user) => setUser(user.data))
+      .catch((err) => console.log(err));
+  }, []);
 
   if (user != null) {
-    sign = user.sign;
-    userGender = user.gender;
+    signRes = SignResolver(user.sign);
+    console.log(signRes);
   }
 
-  signRes = SignResolver(sign);
+  //signRes = SignResolver(user[5]);
 
   switch (signRes.element) {
     case "Air":

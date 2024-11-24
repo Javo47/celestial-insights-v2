@@ -7,7 +7,7 @@ const MongoTest = () => {
   useEffect(() => {
     axios
       .get("/api/getUsers")
-      .then((users) => setUsers(users.data))
+      .then((users) => setUsers(users.data), console.log("test"))
       .catch((err) => console.log(err));
   }, []);
 
@@ -19,7 +19,6 @@ const MongoTest = () => {
         })}
       </div>
       <div className="bg-red-300">{JSON.stringify(users[0])}</div>
-      
     </>
   );
 };

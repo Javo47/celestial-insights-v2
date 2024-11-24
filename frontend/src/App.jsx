@@ -44,10 +44,7 @@ const App = () => {
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route
-          path="/sign-up"
-          element={<SignUpPage signUpSubmit={addUser} />}
-        />
+        <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/test" element={<MongoTest />} />
         <Route path="/users/:id" element={<HomePage />} />
         <Route

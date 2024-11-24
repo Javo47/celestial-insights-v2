@@ -39,6 +39,8 @@ function SignResolver(sign) {
     case "Capricorn":
       sign = signs.zodiac[11];
       break;
+    default:
+      sign = "Unknown";
   }
   return sign;
 }

@@ -17,12 +17,19 @@ app.get("/getUsers", (req, res) => {
     .catch((err) => res.json(err));
 });
 
-app.post("createUser", (req, res) => {
+app.get("/getUser/:id", (req, res) => {
+  const id = req.params.id;
+  UserModel.findById({ _id: id })
+    .then((users) => res.json(users))
+    .catch((err) => res.json(err));
+});
+
+app.post("/createUser", (req, res) => {
   UserModel.create(req.body)
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
 });
 
 app.listen(3001, () => {
-  console.log("Server is running!!");
+  console.log("Server is running on port 3001!!");
 });

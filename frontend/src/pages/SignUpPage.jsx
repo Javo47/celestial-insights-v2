@@ -1,34 +1,53 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import * as uuid from "uuid";
 import BirthResolver from "../components/BirthResolver";
 import LuckyNumberFinder from "../components/LuckyNumberFinder";
 
 const SignUpPage = ({ signUpSubmit }) => {
   const [name, setName] = useState();
+  const [email, setEmail] = useState();
   const [gender, setGender] = useState("Male");
   const [birthDate, setBirthDate] = useState("1999-01-01");
   let sign = BirthResolver(birthDate);
   let lNumber = LuckyNumberFinder(birthDate);
 
   const navigate = useNavigate();
-  const id = uuid.v4();
 
   const submitForm = (e) => {
+    let id = "0";
     e.preventDefault();
+    axios
+      .post("/api/createUser", {
+        name,
+        email,
+        gender,
+        birthDate,
+        sign,
+        lNumber,
+      })
+      .then((result) => {
+        console.log(result);
+        //console.log(result.data.gender);
+        id = result.data._id;
+        //console.log(result.data._id);
+        navigate(`/users/${id}`);
+      })
+      .catch((err) => console.log(err));
 
-    const newUser = {
-      id,
-      name,
-      birthDate,
-      sign,
-      lNumber,
-      gender,
-    };
+    // const newUser = {
+    //   name,
+    //   email,
+    //   gender,
+    //   birthDate,
+    //   sign,
+    //   lNumber,
+    // };
 
-    signUpSubmit(newUser);
+    // signUpSubmit(newUser);
 
-    return navigate(`/users/${id}`);
+    //return navigate(`/users/${id}`);
   };
 
   return (
@@ -54,6 +73,21 @@ const SignUpPage = ({ signUpSubmit }) => {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">
+                  Email
+                </label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  className="border rounded w-full py-2 px-3 mb-2"
+                  placeholder="jdoe@whomail.com"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
