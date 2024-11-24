@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import BirthResolver from "../components/BirthResolver";
 import LuckyNumberFinder from "../components/LuckyNumberFinder";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
   const [name, setName] = useState();
@@ -29,22 +30,10 @@ const SignUpPage = () => {
       .then((result) => {
         console.log(result);
         id = result.data._id;
-        navigate(`/users/${id}`);
+        toast.success(`Account successfully created! \u{1F973}`);
+        //navigate(`/users/${id}`);
       })
       .catch((err) => console.log(err));
-
-    // const newUser = {
-    //   name,
-    //   email,
-    //   gender,
-    //   birthDate,
-    //   sign,
-    //   lNumber,
-    // };
-
-    // signUpSubmit(newUser);
-
-    //return navigate(`/users/${id}`);
   };
 
   return (
