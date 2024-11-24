@@ -17,12 +17,15 @@ const MedSquare = ({ labeling = "Untitled", image }) => {
 
   return (
     <div
-      className={`min-h-[282px]  rounded-lg shadow flex flex-col items-center justify-between font-uncial bg-cover bg-no-repeat bg-center`}
+      className={`min-h-[282px] max-h-[100%]  rounded-lg shadow flex flex-col items-center justify-between font-uncial bg-cover bg-no-repeat bg-center`}
     >
       <h2 className="text-2xl my-4">{labeling}</h2>
       <div
-        className={`min-h-[200px] max-h-[100px] min-w-[325px] mb-8 rounded-lg shadow border-4 flex bg-no-repeat bg-center bg-contain ${image}`}
-      ></div>
+        className={`mb-8 rounded-lg shadow border-4 inline-flex max-h-[50%] max-w-[90%]
+           ${image}`}
+      >
+        <img src={`${image}`} className="object-cover"></img>
+      </div>
     </div>
   );
 };

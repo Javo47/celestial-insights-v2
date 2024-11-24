@@ -12,8 +12,6 @@ import SignUpPage from "./pages/SignUpPage";
 import MainLayout from "./layouts/MainLayout";
 import UserAccountPage from "./pages/UserAccountPage";
 import MongoTest from "./pages/MongoTest";
-//import UserAccountPage from "./pages/UserAccountPage";
-//import UserDetails from "./components/userDetails";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -24,22 +22,6 @@ const App = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const addUser = async (newUser) => {
-    const res = await fetch("/api/users/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newUser),
-    });
-  };
-
-  const deleteAccount = async (id) => {
-    const res = await fetch(`/api/users/${id}`, {
-      method: "DELETE",
-    });
-  };
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
@@ -48,7 +30,6 @@ const App = () => {
         <Route path="/test" element={<MongoTest />} />
         <Route path="/users/:id" element={<HomePage />} />
         <Route path="/users/:id/account" element={<UserAccountPage />} />
-        {/* <Route path="/users/test" element={<UserDetails />} /> */}
       </Route>
     )
   );

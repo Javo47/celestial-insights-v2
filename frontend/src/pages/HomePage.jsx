@@ -35,6 +35,7 @@ const HomePage = () => {
 
   if (user != null) {
     signRes = SignResolver(user.sign);
+    userGender = user.gender;
     console.log(signRes);
   }
 
@@ -57,12 +58,14 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="bg-slate-300">
-        <div className={`container  py-1 ${themeColor}`}>
+      <div className="bg-celestial bg-center">
+        <div
+          className={`container  py-1 ${themeColor} opacity-100 grid-rows-12 grid-flow-col`}
+        >
           {/* Upper-Half */}
-          <div className="order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 lg:grid-cols-12">
+          <div className="order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 min-h-[0px] lg:grid-cols-12 lg:row-span-2 border-solid border-black border-2 ">
             {/* Upper-Left */}
-            <div className="grid gap-y-5 rounded-lg lg:col-span-3">
+            <div className="grid gap-y-5 rounded-lg lg:col-span-3 max-h-[100%]">
               <MedSquare labeling="Element" image={signRes.element} />
               <MedSquare
                 labeling="Constellation"
@@ -87,13 +90,17 @@ const HomePage = () => {
           </div>
 
           {/* Lower-Half */}
-          <div className="m-4 grid grid-cols-1 gap-4 lg:grid-cols-12">
+          <div className="m-4 grid grid-cols-1 gap-4 lg:grid-cols-12 lg:row-span-10">
             <Rectangle
               labeling="Traits"
               listItems={signRes.traits}
               gender={userGender}
             />
-            <Rectangle labeling="Compatibility" listItems={signRes.traits} />
+            <Rectangle
+              labeling="Compatibility"
+              listItems={signRes.traits}
+              gender={userGender}
+            />
           </div>
         </div>
       </div>

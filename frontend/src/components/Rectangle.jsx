@@ -6,13 +6,13 @@ const Rectangle = ({ labeling, listItems, gender, bg = "bg-transparent" }) => {
   let a, b, c, d, e, f;
 
   if (listItems instanceof Object) {
-    if (gender == "male") {
+    if (gender == "Male") {
       [a, b, c, d, e, f] = listItems?.male;
       labeling = labeling + " (Masculine)";
-    } else if (gender == "female") {
+    } else if (gender == "Female") {
       [a, b, c, d, e, f] = listItems?.female;
       labeling = labeling + " (Feminine)";
-    } else if (gender == "other") {
+    } else if (gender == "nb-other") {
       [a, b, c, d, e, f] = listItems?.other;
       labeling = labeling + " (Other/NB)";
     }

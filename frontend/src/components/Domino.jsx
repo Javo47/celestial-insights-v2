@@ -4,23 +4,6 @@ import SignResolver from "./SignResolver";
 import ImageResolver from "./ImageResolver";
 
 const Domino = ({ labeling, image }) => {
-  // let signRes = " ";
-  // const user = UserDetails();
-
-  // if (user != null) {
-  //   signRes = SignResolver(user.sign);
-  // }
-
-  // if (image != null) {
-  //   if (labeling == "Element") {
-  //     image = signRes.element;
-  //   } else if (labeling == "Type") {
-  //     image = signRes.signType;
-  //   } else {
-  //     console.log("The sign cannot be resolved.");
-  //   }
-  // }
-
   image = ImageResolver(image);
 
   return (
@@ -30,7 +13,7 @@ const Domino = ({ labeling, image }) => {
       >
         <h2 className="text-xl my-8">{labeling}</h2>
         <div
-          className={`min-h-[175px] max-h-[100px] min-w-[150px] mb-14 rounded-lg shadow border-4 flex bg-no-repeat   bg-center bg-contain ${image}`}
+          className={`min-h-[175px] max-h-[100px] min-w-[90%] mb-14 rounded-lg shadow border-4 flex bg-no-repeat   bg-center bg-cover ${image}`}
         ></div>
       </div>
     </>
