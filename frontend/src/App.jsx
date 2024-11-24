@@ -10,7 +10,7 @@ import {
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import MainLayout from "./layouts/MainLayout";
-import UserAccountPage, { dataLoader } from "./pages/UserAccountPage";
+import UserAccountPage from "./pages/UserAccountPage";
 import MongoTest from "./pages/MongoTest";
 //import UserAccountPage from "./pages/UserAccountPage";
 //import UserDetails from "./components/userDetails";
@@ -47,11 +47,7 @@ const App = () => {
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/test" element={<MongoTest />} />
         <Route path="/users/:id" element={<HomePage />} />
-        <Route
-          path="/users/:id/account"
-          element={<UserAccountPage deleteAccount={deleteAccount} />}
-          loader={dataLoader}
-        />
+        <Route path="/users/:id/account" element={<UserAccountPage />} />
         {/* <Route path="/users/test" element={<UserDetails />} /> */}
       </Route>
     )

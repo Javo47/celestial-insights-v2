@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import * as uuid from "uuid";
 import BirthResolver from "../components/BirthResolver";
 import LuckyNumberFinder from "../components/LuckyNumberFinder";
 
-const SignUpPage = ({ signUpSubmit }) => {
+const SignUpPage = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [gender, setGender] = useState("Male");
@@ -29,9 +28,7 @@ const SignUpPage = ({ signUpSubmit }) => {
       })
       .then((result) => {
         console.log(result);
-        //console.log(result.data.gender);
         id = result.data._id;
-        //console.log(result.data._id);
         navigate(`/users/${id}`);
       })
       .catch((err) => console.log(err));
