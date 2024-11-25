@@ -6,8 +6,13 @@ const CenterBox = ({ image }) => {
 
   return (
     <div
-      className={`min-h-[500px] max-h-[500px] rounded-lg shadow ${image}  bg-contain bg-no-repeat bg-purple-500 bg-center`}
-    ></div>
+      className={` min-h-[500px] max-h-[500px] rounded-lg shadow-2xl shadow-black bg-purple-950 hover:scale-105  transition ease-in-out  bg-contain bg-no-repeat overflow-hidden  bg-center`}
+    >
+      <img
+          src={`${image}`}
+          className="object-contain object-center w-[100%] h-[100%] rounded-2xl  "
+        ></img>
+    </div>
   );
 };
 

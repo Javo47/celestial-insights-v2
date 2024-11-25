@@ -14,6 +14,7 @@ export default {
         aquarius: "url('/src/assets/images/avatars/avatar_aquarius.jpg')",
         celestial:
           "url('/src/assets/images/backgrounds/celestial-background.jpg')",
+        galaxy: "url('/src/assets/images/backgrounds/large-galaxy.jpg')",
       },
     },
   },

@@ -1,6 +1,4 @@
 import React from "react";
-import UserDetails from "./userDetails";
-import SignResolver from "./SignResolver";
 import ImageResolver from "./ImageResolver";
 
 const Domino = ({ labeling, image }) => {
@@ -9,12 +7,17 @@ const Domino = ({ labeling, image }) => {
   return (
     <>
       <div
-        className={`min-h-[282px] rounded-lg shadow flex flex-col items-center justify-between font-uncial`}
+        className={`h-[100%] rounded-lg shadow flex flex-col items-center justify-between font-uncial`}
       >
         <h2 className="text-xl my-8">{labeling}</h2>
         <div
-          className={`min-h-[175px] max-h-[100px] min-w-[90%] mb-14 rounded-lg shadow border-4 flex bg-no-repeat   bg-center bg-cover ${image}`}
-        ></div>
+          className={`w-[90%] mb-14 rounded-2xl shadow-black shadow-2xl flex hover:scale-110`}
+        >
+          <img
+          src={`${image}`}
+          className="object-cover object-center rounded-2xl w-[100%] h-[100%]  "
+        ></img>
+        </div>
       </div>
     </>
   );

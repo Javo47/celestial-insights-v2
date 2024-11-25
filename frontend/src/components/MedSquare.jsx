@@ -1,6 +1,4 @@
 import React from "react";
-import UserDetails from "./userDetails";
-import SignResolver from "./SignResolver";
 import ImageResolver from "./ImageResolver";
 
 const MedSquare = ({ labeling = "Untitled", image }) => {
@@ -17,14 +15,16 @@ const MedSquare = ({ labeling = "Untitled", image }) => {
 
   return (
     <div
-      className={`min-h-[282px] max-h-[100%]  rounded-lg shadow flex flex-col items-center justify-between font-uncial bg-cover bg-no-repeat bg-center`}
+      className={`h-[50%] rounded-lg shadow flex flex-col items-center justify-start font-uncial`}
     >
       <h2 className="text-2xl my-4">{labeling}</h2>
       <div
-        className={`mb-8 rounded-lg shadow border-4 inline-flex max-h-[50%] max-w-[90%]
-           ${image}`}
+        className={`mb-8 mx-2 rounded-2xl  h-[100%] w-[90%] overflow-hidden hover:scale-105  shadow-black shadow-2xl transition ease-in-out  `}
       >
-        <img src={`${image}`} className="object-cover"></img>
+        <img
+          src={`${image}`}
+          className="object-cover object-center w-[100%] h-[100%] "
+        ></img>
       </div>
     </div>
   );

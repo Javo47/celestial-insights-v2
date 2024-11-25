@@ -58,14 +58,14 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="bg-celestial bg-center">
+      <div className="bg-galaxy bg-center bg-cover bg-no-repeat">
         <div
-          className={`container  py-1 ${themeColor} opacity-100 grid-rows-12 grid-flow-col`}
+          className={`container  py-1 ${themeColor} opacity-100  2xl:max-w-[80vw]`}
         >
           {/* Upper-Half */}
-          <div className="order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 min-h-[0px] lg:grid-cols-12 lg:row-span-2 border-solid border-black border-2 ">
+          <div className=" order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 h-[100%] lg:grid-cols-12  ">
             {/* Upper-Left */}
-            <div className="grid gap-y-5 rounded-lg lg:col-span-3 max-h-[100%]">
+            <div className="gap-y-5 rounded-lg lg:col-span-3 h-[100%] ">
               <MedSquare labeling="Element" image={signRes.element} />
               <MedSquare
                 labeling="Constellation"
@@ -74,14 +74,14 @@ const HomePage = () => {
             </div>
 
             {/* Middle */}
-            <div className="order-first grid min-h-[100px] gap-y-4 rounded-lg lg:order-2 lg:col-span-6">
+            <div className="order-first grid min-h-[100px] max-h-[100%] gap-y-4 rounded-lg lg:order-2 lg:col-span-6">
               <Bar zodiacSign={signRes.name} dateRange={signRes.dates} />
               <CenterBox image={signRes.name} />
             </div>
 
             {/* Upper-Right */}
-            <div className="order-3 grid gap-y-5 rounded-lg lg:order-3 lg:col-span-3">
-              <div className="rounded-lg grid grid-cols-2 gap-4">
+            <div className="order-3 gap-y-5 rounded-lg lg:order-3 lg:col-span-3 h-[100%] ">
+              <div className="rounded-lg grid grid-cols-2 gap-4 h-[50%]">
                 <Domino labeling="Symbol" image={signRes.element} />
                 <Domino labeling="Type" image={signRes.signType} />
               </div>
