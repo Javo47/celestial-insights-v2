@@ -4,10 +4,8 @@ import Bar from "../components/Bar";
 import CenterBox from "../components/CenterBox";
 import Domino from "../components/Domino";
 import Rectangle from "../components/Rectangle";
-import { useParams, useLoaderData } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import axios from "axios";
-import signs from "../signs.json";
-import users from "../users.json";
 import UserDetails from "../components/userDetails";
 import SignResolver from "../components/SignResolver";
 
@@ -16,12 +14,7 @@ const HomePage = () => {
   let signRes = " ";
   let userGender = " ";
   let themeColor = "bg-slate-200";
-  // const user = UserDetails();
 
-  // if (user != null) {
-  //   sign = user.sign;
-  //   userGender = user.gender;
-  // }
 
   const { id } = useParams();
   const [user, setUser] = useState();
@@ -39,7 +32,6 @@ const HomePage = () => {
     console.log(signRes);
   }
 
-  //signRes = SignResolver(user[5]);
 
   switch (signRes.element) {
     case "Air":
@@ -60,21 +52,21 @@ const HomePage = () => {
     <>
       <div className="bg-galaxy bg-center bg-cover bg-no-repeat">
         <div
-          className={`container  py-1 ${themeColor} opacity-100  2xl:max-w-[80vw]`}
+          className={`container  py-1 bg-gray-400 bg-opacity-95  2xl:max-w-[80vw]`}
         >
           {/* Upper-Half */}
-          <div className=" order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 h-[100%] lg:grid-cols-12  ">
+          <div className=" order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 h-[100%] lg:grid-cols-12 ">
             {/* Upper-Left */}
-            <div className="gap-y-5 rounded-lg lg:col-span-3 h-[100%] ">
+            <div className="gap-y-5 rounded-lg lg:col-span-3  h-[100%]">
               <MedSquare labeling="Element" image={signRes.element} />
               <MedSquare
                 labeling="Constellation"
-                image={signRes.rulingPlanets}
+                image={signRes.name}
               />
             </div>
 
             {/* Middle */}
-            <div className="order-first grid min-h-[100px] max-h-[100%] gap-y-4 rounded-lg lg:order-2 lg:col-span-6">
+            <div className="order-first grid h-[100%] gap-y-4 rounded-lg lg:order-2 lg:col-span-6">
               <Bar zodiacSign={signRes.name} dateRange={signRes.dates} />
               <CenterBox image={signRes.name} />
             </div>
@@ -85,7 +77,9 @@ const HomePage = () => {
                 <Domino labeling="Symbol" image={signRes.element} />
                 <Domino labeling="Type" image={signRes.signType} />
               </div>
+              
               <MedSquare labeling="Planet" image={signRes.rulingPlanets} />
+              
             </div>
           </div>
 

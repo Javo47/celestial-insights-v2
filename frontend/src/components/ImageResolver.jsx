@@ -4,6 +4,7 @@ function ImageResolver(image) {
   switch (image) {
     case "Air":
       image = `/src/assets/images/elements/element_air.jpg`;
+      //image = `/src/assets/images/types/male-symbol.png`;
       break;
     case "Water":
       image = `/src/assets/images/elements/element_water.jpg`;
@@ -55,6 +56,15 @@ function ImageResolver(image) {
       break;
     case "Virgo":
       image = `/src/assets/images/avatars/avatar_virgo.jpg`;
+      break;
+    case "Uranus":
+      image = `/src/assets/images/planets/uranus.jpg`;
+      break;
+    case "Saturn":
+      image = `/src/assets/images/planets/saturn.jpg`;
+      break;
+    case "Aquarius-const":
+      image = `/src/assets/images/constellations/const-aquarius.jpg`;
       break;
   }
   return image;

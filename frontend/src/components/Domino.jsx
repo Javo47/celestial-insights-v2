@@ -11,11 +11,11 @@ const Domino = ({ labeling, image }) => {
       >
         <h2 className="text-xl my-8">{labeling}</h2>
         <div
-          className={`w-[90%] mb-14 rounded-2xl shadow-black shadow-2xl flex hover:scale-110`}
+          className={`min-w-auto max-h-[153px] mb-14 rounded-2xl shadow-black shadow-2xl flex hover:scale-110 transition ease-in-out`}
         >
           <img
           src={`${image}`}
-          className="object-cover object-center rounded-2xl w-[100%] h-[100%]  "
+          className="object-contain object-center rounded-2xl w-[100%] h-[100%]  "
         ></img>
         </div>
       </div>
