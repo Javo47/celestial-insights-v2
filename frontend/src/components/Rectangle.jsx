@@ -1,11 +1,11 @@
 import React from "react";
-import signs from "../signs.json";
-import jobs from "../jobs.json";
 
 const Rectangle = ({ labeling, listItems, gender, bg = "bg-transparent" }) => {
   let a, b, c, d, e, f;
 
-  if (listItems instanceof Object) {
+  if (listItems instanceof Array) {
+    [a, b, c, d, e, f] = listItems;
+  } else if (listItems instanceof Object) {
     if (gender == "Male") {
       [a, b, c, d, e, f] = listItems?.male;
       labeling = labeling + " (Masculine)";

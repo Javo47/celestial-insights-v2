@@ -31,16 +31,16 @@ const SignUpPage = () => {
         console.log(result);
         id = result.data._id;
         toast.success(`Account successfully created! \u{1F973}`);
-        //navigate(`/users/${id}`);
+        navigate(`/users/${id}`);
       })
       .catch((err) => console.log(err));
   };
 
   return (
     <>
-      <section className="bg-indigo-50">
-        <div className="container m-auto max-w-2xl py-24">
-          <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
+      <section className="bg-galaxy bg-cover bg-no-repeat bg-center h-[100vh]">
+        <div className="container m-auto max-w-2xl py-24 ">
+          <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-xl border m-4 md:m-0">
             <form onSubmit={submitForm}>
               <h2 className="text-3xl text-center font-semibold mb-6">
                 Sign Up Now

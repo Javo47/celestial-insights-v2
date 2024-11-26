@@ -31,7 +31,7 @@ function ImageResolver(image) {
       image = `/src/assets/images/avatars/avatar_cancer.jpg`;
       break;
     case "Capricorn":
-      image = `/src/assets/images/avatars/avatar_capricorn.jpg`;
+      image = "/src/assets/images/avatars/avatar_capricorn.jpg";
       break;
     case "Gemini":
       image = `/src/assets/images/avatars/avatar_gemini.jpg`;
@@ -63,9 +63,35 @@ function ImageResolver(image) {
     case "Saturn":
       image = `/src/assets/images/planets/saturn.jpg`;
       break;
+    case "Jupiter":
+      image = `/src/assets/images/planets/jupiter.jpg`;
+      break;
+    case "Mars":
+      image = `/src/assets/images/planets/mars.jpg`;
+      break;
+    case "Mercury":
+      image = `/src/assets/images/planets/mercury.jpg`;
+      break;
+    case "Moon":
+      image = `/src/assets/images/planets/moon.jpg`;
+      break;
+    case "Neptune":
+      image = `/src/assets/images/planets/neptune.jpg`;
+      break;
+    case "Pluto":
+      image = `/src/assets/images/planets/pluto.jpg`;
+      break;
+    case "Sun":
+      image = `/src/assets/images/planets/sun.jpg`;
+      break;
+    case "Venus":
+      image = `/src/assets/images/planets/venus.jpg`;
+      break;
     case "Aquarius-const":
       image = `/src/assets/images/constellations/const-aquarius.jpg`;
       break;
+    default:
+      image = "/src/assets/images/backgrounds/large-galaxy.jpg";
   }
   return image;
 }

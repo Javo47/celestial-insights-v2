@@ -9,32 +9,15 @@ import { useState, useEffect } from "react";
 const UserAccountPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  // const acct = useLoaderData();
-  // let user = " ";
-  // const userData = UserDetails();
-
-  // if (userData != null) {
-  //   user = userData;
-  // }
-
-  // const onDeleteClick = (acctId) => {
-  //   const confirm = window.confirm(
-  //     "Are you sure you want to delete your account?"
-  //   );
-
-  //   if (!confirm) return;
-
-  //   deleteAccount(acctId);
-
-  //   navigate("/sign-up");
-  // };
 
   const [userId, setUserId] = useState("0");
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [gender, setGender] = useState("Male");
   const [birthDate, setBirthDate] = useState("1999-01-01");
-  let sign = BirthResolver(birthDate);
+  const [sign, setSign] = useState();
+
+  let signImage = "";
   let lNumber = LuckyNumberFinder(birthDate);
 
   useEffect(() => {
@@ -48,9 +31,15 @@ const UserAccountPage = () => {
         setEmail(result.data.email);
         setGender(result.data.gender);
         setBirthDate(result.data.birthDate);
+        setSign(BirthResolver(birthDate));
       })
       .catch((err) => console.log(err));
   }, []);
+
+  if (sign != null) {
+    signImage = ImageResolver(sign);
+    console.log(signImage);
+  }
 
   const updateUser = (e) => {
     e.preventDefault();
@@ -81,6 +70,8 @@ const UserAccountPage = () => {
       .catch((err) => console.log(err));
   };
 
+  //const test = ImageResolver(sign);
+
   return (
     <>
       <section className="bg-celestial">
@@ -88,7 +79,7 @@ const UserAccountPage = () => {
           <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
             <form onSubmit={updateUser}>
               <h2 className="text-3xl text-center font-semibold mb-6">
-                Account Settings
+                Account Settings {sign}
               </h2>
 
               <div className="mb-4">
@@ -171,18 +162,15 @@ const UserAccountPage = () => {
               </div>
               <div className="flex items-center justify-between">
                 <div className="mb-10 w-6/12">
-                  <button
-                    className={`${ImageResolver(
-                      sign
-                    )} bg-center bg-cover h-[300px] items-center mr-1  hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline`}
-                  ></button>
+                  <img
+                    className={`bg-center bg-contain h-[300px] items-center mr-1  hover:scale-105 transition ease-in-out text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline`} src={signImage}
+                  ></img>
                 </div>
-                <div className="mb-10 w-6/12">
-                  <button
-                    className={`${ImageResolver(
-                      sign
-                    )} bg-center bg-cover h-[300px] items-center ml-1  hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline`}
-                  ></button>
+                <div className={`mb-10 w-6/12 bg-[url('${signImage}')]`}>
+                  <img
+                    className={` bg-center bg-contain h-[300px] items-center ml-1  hover:scale-105 transition ease-in-out text-white font-bold py-2 px-4 rounded-3xl w-full focus:outline-none focus:shadow-outline`} src={signImage}
+                  ></img>
+                  
                 </div>
               </div>
               <hr className="w-11/12 h-10 m-auto"></hr>

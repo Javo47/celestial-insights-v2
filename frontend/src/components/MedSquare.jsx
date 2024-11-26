@@ -20,8 +20,8 @@ const MedSquare = ({ labeling = "Untitled", image }) => {
   }
 
   image = ImageResolver(image);
-  console.log(image);
-  console.log(imageA);
+  // console.log(image);
+  // console.log(imageA);
 
   return (
     <div
@@ -31,7 +31,7 @@ const MedSquare = ({ labeling = "Untitled", image }) => {
         {isArray ? `${labeling}` + "s" : `${labeling}`}
       </h2>
       <div
-        className={`mb-8 mx-2 rounded-2xl max-h-[212px] h-[100%] w-[90%] overflow-hidden hover:scale-105  shadow-black shadow-2xl transition ease-in-out  `}
+        className={`mb-8 mx-2 rounded-2xl max-h-[212px] h-[100%] w-[90%]  overflow-hidden hover:scale-105  shadow-black shadow-2xl transition ease-in-out  `}
       >
         <img
           src={isArray ? `${imageA}` : `${image}`}
