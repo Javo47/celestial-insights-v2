@@ -18,6 +18,9 @@ mongoose.connect(
   "mongodb+srv://javo47:FAfxJSZyZ1GSowTG@cluster0.7we9r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 );
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+
 app.get("/getUsers", (req, res) => {
   UserModel.find()
     .then((users) => res.json(users))
