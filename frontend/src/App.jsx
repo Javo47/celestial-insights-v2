@@ -19,7 +19,7 @@ const App = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/getUsers")
+      .get("https://celestial-insights-v2-api.vercel.app/getUsers")
       .then((users) => setUsers(users.data))
       .catch((err) => console.log(err));
   }, []);
