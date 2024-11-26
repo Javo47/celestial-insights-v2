@@ -20,6 +20,7 @@ mongoose.connect(
 
 app.get("/", (req, res) => {
   res.json("Hello");
+});
 
 app.get("/getUsers", (req, res) => {
   UserModel.find()
