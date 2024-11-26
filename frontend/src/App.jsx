@@ -11,7 +11,9 @@ import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import MainLayout from "./layouts/MainLayout";
 import UserAccountPage from "./pages/UserAccountPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import MongoTest from "./pages/MongoTest";
+import Login from "./pages/Login";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -30,6 +32,8 @@ const App = () => {
         <Route path="/test" element={<MongoTest />} />
         <Route path="/users/:id" element={<HomePage />} />
         <Route path="/users/:id/account" element={<UserAccountPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
   );

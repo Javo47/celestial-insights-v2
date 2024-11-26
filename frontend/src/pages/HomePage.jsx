@@ -6,7 +6,6 @@ import Domino from "../components/Domino";
 import Rectangle from "../components/Rectangle";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import UserDetails from "../components/userDetails";
 import SignResolver from "../components/SignResolver";
 
 const HomePage = () => {
@@ -47,14 +46,11 @@ const HomePage = () => {
       themeColor = "black";
   }
 
-
-  
-
   return (
     <>
       <div className="bg-galaxy bg-center bg-cover bg-no-repeat">
         <div
-          className={`container  py-1 bg-gray-400 bg-opacity-95  2xl:max-w-[80vw]`}
+          className={`container  py-1 bg-${themeColor}-950 bg-opacity-30  2xl:max-w-[80vw]`}
         >
           {/* Upper-Half */}
           <div className=" order-2 m-4 grid grid-cols-1 gap-4 lg:order-1 h-[100%] lg:grid-cols-12 ">

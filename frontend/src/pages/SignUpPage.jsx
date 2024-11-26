@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 const SignUpPage = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const [gender, setGender] = useState("Male");
   const [birthDate, setBirthDate] = useState("1999-01-01");
   let sign = BirthResolver(birthDate);
@@ -22,6 +23,7 @@ const SignUpPage = () => {
       .post("/api/createUser", {
         name,
         email,
+        password,
         gender,
         birthDate,
         sign,
@@ -55,7 +57,7 @@ const SignUpPage = () => {
                   id="name"
                   name="name"
                   className="border rounded w-full py-2 px-3 mb-2"
-                  placeholder="John Doe"
+                  placeholder="Enter Name"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -70,10 +72,25 @@ const SignUpPage = () => {
                   id="email"
                   name="email"
                   className="border rounded w-full py-2 px-3 mb-2"
-                  placeholder="jdoe@whomail.com"
+                  placeholder="Enter Email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  className="border rounded w-full py-2 px-3 mb-2"
+                  placeholder="Enter Password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
@@ -121,7 +138,7 @@ const SignUpPage = () => {
                   className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
-                  Submit
+                  Register
                 </button>
               </div>
             </form>

@@ -13,6 +13,7 @@ const UserAccountPage = () => {
   const [userId, setUserId] = useState("0");
   const [name, setName] = useState();
   const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const [gender, setGender] = useState("Male");
   const [birthDate, setBirthDate] = useState("1999-01-01");
   const [sign, setSign] = useState();
@@ -29,6 +30,7 @@ const UserAccountPage = () => {
         console.log(userId);
         setName(result.data.name);
         setEmail(result.data.email);
+        setPassword(result.data.password);
         setGender(result.data.gender);
         setBirthDate(result.data.birthDate);
         setSign(BirthResolver(birthDate));
@@ -110,6 +112,22 @@ const UserAccountPage = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  className="border rounded w-full py-2 px-3 mb-2"
+                  placeholder="Enter Password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
