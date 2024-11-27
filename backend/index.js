@@ -19,7 +19,7 @@ mongoose.connect(
 );
 
 app.get("/", (req, res) => {
-  res.json("Hello");
+  res.json("Hello, it's me!");
 });
 
 app.get("/getUsers", (req, res) => {
