@@ -19,7 +19,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get(`/api/getUser/${id}`)
+      .get(`/getUser/${id}`)
       .then((user) => setUser(user.data))
       .catch((err) => console.log(err));
   }, []);
