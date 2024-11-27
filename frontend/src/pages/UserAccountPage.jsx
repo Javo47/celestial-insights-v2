@@ -56,8 +56,8 @@ const UserAccountPage = () => {
       })
       .then((result) => {
         console.log(result);
-        id = result.data._id;
-        navigate(`/users/${id}`);
+        const newId = result.data._id;
+        navigate(`/users/${newId}`);
       })
       .catch((err) => console.log(err));
   };
@@ -181,14 +181,15 @@ const UserAccountPage = () => {
               <div className="flex items-center justify-between">
                 <div className="mb-10 w-6/12">
                   <img
-                    className={`bg-center bg-contain h-[300px] items-center mr-1  hover:scale-105 transition ease-in-out text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline`} src={signImage}
+                    className={`bg-center bg-contain h-[300px] items-center mr-1  hover:scale-105 transition ease-in-out text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline`}
+                    src={signImage}
                   ></img>
                 </div>
                 <div className={`mb-10 w-6/12 bg-[url('${signImage}')]`}>
                   <img
-                    className={` bg-center bg-contain h-[300px] items-center ml-1  hover:scale-105 transition ease-in-out text-white font-bold py-2 px-4 rounded-3xl w-full focus:outline-none focus:shadow-outline`} src={signImage}
+                    className={` bg-center bg-contain h-[300px] items-center ml-1  hover:scale-105 transition ease-in-out text-white font-bold py-2 px-4 rounded-3xl w-full focus:outline-none focus:shadow-outline`}
+                    src={signImage}
                   ></img>
-                  
                 </div>
               </div>
               <hr className="w-11/12 h-10 m-auto"></hr>
