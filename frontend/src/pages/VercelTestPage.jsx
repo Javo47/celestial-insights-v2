@@ -3,7 +3,7 @@ import axios from "axios";
 
 const VercelTestPage = () => {
   axios
-    .get("/")
+    .get("/https://celestial-api-production.vercel.app/")
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 
