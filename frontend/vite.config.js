@@ -8,8 +8,8 @@ export default defineConfig({
     //port: 3000,
     proxy: {
       "/api": {
-        target: "http://celestial-insights-v2-api-git-fullstack-javonnies-projects.vercel.app/",
-        secure: false,
+        target: "https://celestial-insights-v2-api-git-fullstack-javonnies-projects.vercel.app/",
+        //secure: false,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
