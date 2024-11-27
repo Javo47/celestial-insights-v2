@@ -3,9 +3,7 @@ import axios from "axios";
 
 const VercelTestPage = () => {
   axios
-    .get(
-      "/api/getUsers/"
-    )
+    .get("/api/")
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 
