@@ -14,6 +14,7 @@ import UserAccountPage from "./pages/UserAccountPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import MongoTest from "./pages/MongoTest";
 import Login from "./pages/Login";
+import VercelTestPage from "./pages/VercelTestPage";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -27,7 +28,8 @@ const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
+        {/* Change index back to HomePage after testing. */}
+        <Route index element={<VercelTestPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/test" element={<MongoTest />} />
         <Route path="/users/:id" element={<HomePage />} />
