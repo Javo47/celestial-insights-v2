@@ -4,7 +4,7 @@ import axios from "axios";
 const VercelTestPage = () => {
   axios
     .get(
-      "/https://celestial-insights-v2-api-git-fullstack-javonnies-projects.vercel.app/"
+      "/api/getUsers/"
     )
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
