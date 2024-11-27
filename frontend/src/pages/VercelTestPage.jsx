@@ -3,8 +3,8 @@ import axios from "axios";
 
 const VercelTestPage = () => {
   axios
-    .get("/https://celestial-api-production.vercel.app/")
-    .then((res) => console.log(res))
+    .get("https://celestial-api-production.vercel.app/")
+    .then((res) => console.log("It works."))
     .catch((err) => console.log(err));
 
   return <div>VercelTestPage - Check the console!</div>;
