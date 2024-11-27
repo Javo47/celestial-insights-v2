@@ -6,7 +6,9 @@ const UserModel = require("./models/Users");
 const app = express();
 app.use(
   cors({
-    origin: ["https://celestial-insights-v2-client-production.vercel.app/"],
+    origin: [
+      "https://celestial-insights-v2-brs9ogq34-javonnies-projects.vercel.app/",
+    ],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
