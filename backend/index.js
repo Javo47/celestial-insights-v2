@@ -4,20 +4,22 @@ const cors = require("cors");
 const UserModel = require("./models/Users");
 
 const app = express();
-app.use(cors(
-  {
-    origin: ["https://celestial-insights-v2-git-fullstack-javonnies-projects.vercel.app/"],
+app.use(
+  cors({
+    origin: [
+      "https://celestial-insights-v2-git-fullstack-javonnies-projects.vercel.app/",
+    ],
     methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true
-  }
-
-));
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 mongoose.connect(
   "mongodb+srv://javo47:FAfxJSZyZ1GSowTG@cluster0.7we9r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 );
 
+//Adding for push and redeploy
 app.get("/", (req, res) => {
   res.json("Hello, it's me!");
 });

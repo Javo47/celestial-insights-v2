@@ -7,7 +7,7 @@ const VercelTestPage = () => {
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 
-  return <div>VercelTestPage - Check the console</div>;
+  return <div>VercelTestPage - Check the console!</div>;
 };
 
 export default VercelTestPage;
