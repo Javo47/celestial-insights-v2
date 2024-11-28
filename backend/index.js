@@ -7,9 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["*"],
+    origin: ["https://celestial-insights-v2-client-production.vercel.app/"],
     methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: false,
+    credentials: true,
+    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
   })
 );
 
