@@ -19,24 +19,24 @@ mongoose.connect(
 );
 
 //Adding for push and redeploy
-app.get("/", (req, res) => {
+app.get("/", cors(), (req, res) => {
   res.json("Hello, it's me!");
 });
 
-app.get("/getUsers", (req, res) => {
+app.get("/getUsers", cors(), (req, res) => {
   UserModel.find()
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
 });
 
-app.get("/getUser/:id", (req, res) => {
+app.get("/getUser/:id", cors(), (req, res) => {
   const id = req.params.id;
   UserModel.findById({ _id: id })
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
 });
 
-app.put("/updateUser/:id", (req, res) => {
+app.put("/updateUser/:id", cors(), (req, res) => {
   const id = req.params.id;
   UserModel.findByIdAndUpdate(
     { _id: id },
@@ -54,20 +54,20 @@ app.put("/updateUser/:id", (req, res) => {
     .catch((err) => res.json(err));
 });
 
-app.delete("/deleteUser/:id", (req, res) => {
+app.delete("/deleteUser/:id", cors(), (req, res) => {
   const id = req.params.id;
   UserModel.findByIdAndDelete({ _id: id })
     .then((res) => res.json(res))
     .catch((err) => res.json(err));
 });
 
-app.post("/createUser", (req, res) => {
+app.post("/createUser", cors(), (req, res) => {
   UserModel.create(req.body)
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
 });
 
-app.post("/login", (req, res) => {
+app.post("/login", cors(), (req, res) => {
   const { email, password } = req.body;
   UserModel.findOne({ email: email }).then((user) => {
     if (user) {
