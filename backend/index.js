@@ -9,10 +9,9 @@ app.use(
   cors({
     origin: ["*"],
     methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true,
+    credentials: false,
   })
 );
-
 
 mongoose.connect(
   "mongodb+srv://javo47:FAfxJSZyZ1GSowTG@cluster0.7we9r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
