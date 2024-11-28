@@ -31,6 +31,7 @@ const App = () => {
         {/* Change index back to HomePage after testing. */}
         <Route index element={<VercelTestPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
+        <Route path="/home-test" element={<HomePage />} />
         <Route path="/test" element={<MongoTest />} />
         <Route path="/users/:id" element={<HomePage />} />
         <Route path="/users/:id/account" element={<UserAccountPage />} />
