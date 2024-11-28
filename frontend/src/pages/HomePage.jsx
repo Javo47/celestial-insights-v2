@@ -19,7 +19,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get(`/getUser/${id}`)
+      .get(`https://celestial-api-production.vercel.app/getUser/${id}`)
       .then((user) => setUser(user.data))
       .catch((err) => console.log(err));
   }, []);

@@ -9,13 +9,18 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("/api/login", { email, password }).then((result) => {
-      console.log(result);
+    axios
+      .post("https://celestial-api-production.vercel.app/login", {
+        email,
+        password,
+      })
+      .then((result) => {
+        console.log(result);
 
-      if (result.data === "Success!") {
-        navigate("/home");
-      }
-    });
+        if (result.data === "Success!") {
+          navigate("/home");
+        }
+      });
   };
 
   return (

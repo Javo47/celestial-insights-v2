@@ -23,7 +23,7 @@ const UserAccountPage = () => {
 
   useEffect(() => {
     axios
-      .get(`/api/getUser/${id}`)
+      .get(`https://celestial-api-production.vercel.app/getUser/${id}`)
       .then((result) => {
         console.log(result);
         setUserId(result.data._id);

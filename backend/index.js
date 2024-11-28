@@ -4,6 +4,7 @@ const cors = require("cors");
 const UserModel = require("./models/Users");
 
 const app = express();
+app.use(express.json());
 app.use(
   cors({
     origin: ["*"],
@@ -11,7 +12,7 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json());
+
 
 mongoose.connect(
   "mongodb+srv://javo47:FAfxJSZyZ1GSowTG@cluster0.7we9r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"

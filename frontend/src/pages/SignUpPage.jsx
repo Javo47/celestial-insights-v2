@@ -20,7 +20,7 @@ const SignUpPage = () => {
     let id = "0";
     e.preventDefault();
     axios
-      .post("/api/createUser", {
+      .post("https://celestial-api-production.vercel.app/createUser", {
         name,
         email,
         password,

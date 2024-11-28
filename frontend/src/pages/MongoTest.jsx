@@ -6,7 +6,7 @@ const MongoTest = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
-      .get("/api/getUsers")
+      .get("https://celestial-api-production.vercel.app/getUsers")
       .then((users) => setUsers(users.data), console.log("test"))
       .catch((err) => console.log(err));
   }, []);

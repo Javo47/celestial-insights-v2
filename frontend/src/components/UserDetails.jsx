@@ -28,7 +28,7 @@ const UserDetails = () => {
   useEffect(() => {
     const fetchUser = async () => {
       axios
-        .get(`/api/getUser/${id}`)
+        .get(`https://celestial-api-production.vercel.app/getUser/${id}`)
         .then((result) => console.log(result), setUser(result.data))
         .catch((err) => console.log(err));
       setUser("test");
