@@ -20,7 +20,7 @@ mongoose.connect(
 
 //Adding for push and redeploy
 app.get("/", cors(), (req, res) => {
-  res.json("Hello, it's me!");
+  res.json(`${PORT}`);
 });
 
 app.get("/getUsers", cors(), (req, res) => {
@@ -82,7 +82,7 @@ app.post("/login", cors(), (req, res) => {
   });
 });
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${PORT}`);
