@@ -82,6 +82,8 @@ app.post("/login", cors(), (req, res) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log("Server is running on port 3001!!");
+const PORT = process.env.PORT
+
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
