@@ -3,20 +3,23 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const UserModel = require("./models/Users");
 
+const PORT = process.env.PORT;
+const MONGODB_URI = process.env.MONGODB_URI;
+const ORIGIN_1 = process.env.ORIGIN_1;
+const ORIGIN_2 = process.env.ORIGIN_2;
+
 const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://celestial-insights-v2-client-production.vercel.app/"],
+    origin: [ORIGIN_1, ORIGIN_2],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
     allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
   })
 );
 
-mongoose.connect(
-  "mongodb+srv://javo47:FAfxJSZyZ1GSowTG@cluster0.7we9r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-);
+mongoose.connect(MONGODB_URI);
 
 //Adding for push and redeploy
 app.get("/", cors(), (req, res) => {
@@ -82,8 +85,6 @@ app.post("/login", cors(), (req, res) => {
   });
 });
 
-const PORT = process.env.PORT;
-
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
