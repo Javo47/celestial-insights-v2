@@ -8,7 +8,7 @@ export default defineConfig({
     //port: 3000,
     proxy: {
       "/api": {
-        target: "https://celestial-api-production.vercel.app/",
+        target: "https://celestial-api-preview.vercel.app/",
         //secure: false,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
