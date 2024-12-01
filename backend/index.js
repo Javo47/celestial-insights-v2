@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: [ORIGIN_1, ORIGIN_2],
+    origin: ORIGIN_2,
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
     allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
@@ -87,4 +87,6 @@ app.post("/login", cors(), (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+  console.log(ORIGIN_1);
+  console.log(ORIGIN_2);
 });
