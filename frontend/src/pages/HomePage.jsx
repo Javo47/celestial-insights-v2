@@ -21,7 +21,7 @@ const HomePage = () => {
     axios
       //Change back to ID variable after testing
       .get(
-        `https://celestial-api-preview.vercel.app/getUser/67429a97ae5eb14ad0700440`
+        `https://celestial-api-production.vercel.app/getUser/67429a97ae5eb14ad0700440`
       )
       .then((user) => setUser(user.data))
       .catch((err) => console.log(err));
