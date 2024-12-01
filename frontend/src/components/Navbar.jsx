@@ -13,8 +13,8 @@ const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get(`/getUser/${id}`)
-      .then((user) => setUser(user.data))
+      .get(`https://celestial-api-production.vercel.app/getUser/${id}`)
+      .then((user) => console.log(user.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -40,10 +40,12 @@ const Navbar = () => {
       themeColor = "violet";
   }
 
+  console.log(signRes.element);
+
   return (
     <>
       <nav
-        className={`flex items-center  justify-between flex-wrap bg-${themeColor}-950 p-6`}
+        className={`flex items-center  justify-between flex-wrap bg-slate-950 p-6`}
       >
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <svg

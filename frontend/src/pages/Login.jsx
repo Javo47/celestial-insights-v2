@@ -66,13 +66,21 @@ function Login() {
 
               <div>
                 <button
-                  className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+                  className="bg-indigo-500 hover:bg-indigo-600 mb-4 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
                   Log In
                 </button>
               </div>
             </form>
+            <div>
+              <button
+                className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+                onClick={(e) => navigate("/sign-up")}
+              >
+                Sign Up
+              </button>
+            </div>
           </div>
         </div>
       </section>
