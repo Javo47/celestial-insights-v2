@@ -29,7 +29,7 @@ const App = () => {
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         {/* Change index back to HomePage after testing. */}
-        <Route index element={<VercelTestPage />} />
+        <Route index element={<HomePage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/home-test" element={<HomePage />} />
         <Route path="/test" element={<MongoTest />} />

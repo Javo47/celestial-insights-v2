@@ -27,7 +27,7 @@ const MedSquare = ({ labeling = "Untitled", image }) => {
     <div
       className={`h-[50%] rounded-lg shadow flex flex-col items-center justify-start font-uncial`}
     >
-      <h2 className="text-2xl my-4">
+      <h2 className="text-2xl text-slate-300 my-4">
         {isArray ? `${labeling}` + "s" : `${labeling}`}
       </h2>
       <div

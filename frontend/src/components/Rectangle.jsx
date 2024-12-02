@@ -20,7 +20,7 @@ const Rectangle = ({ labeling, listItems, gender, bg = "bg-transparent" }) => {
 
   return (
     <div
-      className={`min-h-[282px]  rounded-lg ${bg} shadow sm:col-span-6 flex flex-col items-center h-full justify-start font-uncial`}
+      className={`min-h-[282px]   rounded-lg ${bg} shadow sm:col-span-6 flex flex-col items-center h-full justify-start font-uncial`}
     >
       <h2 className="text-3xl mt-4">{labeling}</h2>
       <ul className="m-4 flex flex-col justify-around h-full">

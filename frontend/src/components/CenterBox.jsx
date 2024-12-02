@@ -6,12 +6,12 @@ const CenterBox = ({ image, themeColor }) => {
 
   return (
     <div
-      className={` min-h-[500px] max-h-[500px] rounded-lg shadow-2xl shadow-black bg-${themeColor}-950 hover:scale-105  transition ease-in-out  bg-contain bg-no-repeat overflow-hidden  bg-center`}
+      className={`  max-h-[500px] rounded-lg shadow-2xl shadow-black bg-${themeColor}-950 hover:scale-105  transition ease-in-out  bg-contain bg-no-repeat overflow-hidden  bg-center`}
     >
       <img
-          src={`${image}`}
-          className="object-contain object-center w-[100%] h-[100%] rounded-2xl  "
-        ></img>
+        src={`${image}`}
+        className="object-contain object-center w-[100%] h-[100%] rounded-2xl  "
+      ></img>
     </div>
   );
 };
