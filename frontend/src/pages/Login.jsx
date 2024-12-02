@@ -5,7 +5,7 @@ import axios from "axios";
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [userId, setuserId] = useState()
+  const [userId, setuserId] = useState();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -16,12 +16,14 @@ function Login() {
         password,
       })
       .then((result) => {
-        console.log(result);
+        setuserId(result.data);
+        console.log(userId);
+        navigate(`/users/${userId}`);
 
-        if (result.data === "Success!") {
-          axios.get()
-          navigate("/home");
-        }
+        // if (result.data === "Success!") {
+        //   axios.get();
+        //   //navigate("/home");
+        // }
       });
   };
 
