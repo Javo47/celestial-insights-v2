@@ -75,7 +75,8 @@ app.post("/login", cors(), (req, res) => {
   UserModel.findOne({ email: email }).then((user) => {
     if (user) {
       if (user.password === password) {
-        res.json("Success!");
+        res.json(user._id);
+        //res.json(user._id);
       } else {
         res.json("The password is incorrect..");
       }
