@@ -2,6 +2,10 @@ import React from "react";
 import ImageResolver from "./ImageResolver";
 
 const Domino = ({ labeling, image }) => {
+  if (labeling == "Symbol") {
+    image = image + "-sign";
+  }
+
   image = ImageResolver(image);
 
   return (

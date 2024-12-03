@@ -19,6 +19,8 @@ const MedSquare = ({ labeling = "Untitled", image }) => {
     image = image + "-const";
   }
 
+  
+
   image = ImageResolver(image);
   // console.log(image);
   // console.log(imageA);

@@ -20,9 +20,7 @@ const HomePage = () => {
   useEffect(() => {
     axios
       //Change back to ID variable after testing
-      .get(
-        `https://celestial-api-production.vercel.app/getUser/67429a97ae5eb14ad0700440`
-      )
+      .get(`https://celestial-api-production.vercel.app/getUser/${id}`)
       .then((user) => setUser(user.data))
       .catch((err) => console.log(err));
   }, []);
@@ -76,7 +74,7 @@ const HomePage = () => {
             {/* Upper-Right */}
             <div className="order-3 gap-y-5 rounded-lg lg:order-3 lg:col-span-3 h-[100%] ">
               <div className="rounded-lg grid grid-cols-2 gap-4 h-[50%]">
-                <Domino labeling="Symbol" image={signRes.element} />
+                <Domino labeling="Symbol" image={signRes.name} />
                 <Domino labeling="Type" image={signRes.signType} />
               </div>
 

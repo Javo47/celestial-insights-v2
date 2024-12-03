@@ -2,9 +2,9 @@ import React from "react";
 
 function ImageResolver(image) {
   switch (image) {
+    // Elements
     case "Air":
       image = `/images/elements/element_air.jpg`;
-      //image = `/images/types/male-symbol.png`;
       break;
     case "Water":
       image = `/images/elements/element_water.jpg`;
@@ -15,12 +15,16 @@ function ImageResolver(image) {
     case "Earth":
       image = `/images/elements/element_earth.jpg`;
       break;
+
+    // Gender
     case "Masculine":
-      image = `/images/elements/element_earth.jpg`;
+      image = `/images/symbols/male-sign.jpg`;
       break;
     case "Feminine":
-      image = `/images/elements/element_water.jpg`;
+      image = `/images/symbols/female-sign.jpg`;
       break;
+
+    // Zodiac Avatar
     case "Aquarius":
       image = `/images/avatars/avatar_aquarius.jpg`;
       break;
@@ -57,6 +61,8 @@ function ImageResolver(image) {
     case "Virgo":
       image = `/images/avatars/avatar_virgo.jpg`;
       break;
+
+    // Planets
     case "Uranus":
       image = `/images/planets/uranus.jpg`;
       break;
@@ -87,8 +93,78 @@ function ImageResolver(image) {
     case "Venus":
       image = `/images/planets/venus.jpg`;
       break;
+
+    // Constellations
     case "Aquarius-const":
       image = `/images/constellations/const-aquarius.jpg`;
+      break;
+    case "Pisces-const":
+      image = `/images/constellations/const-pisces.jpg`;
+      break;
+    case "Gemini-const":
+      image = `/images/constellations/const-gemini.jpg`;
+      break;
+    case "Cancer-const":
+      image = `/images/constellations/const-cancer.jpg`;
+      break;
+    case "Taurus-const":
+      image = `/images/constellations/const-taurus.jpg`;
+      break;
+    case "Virgo-const":
+      image = `/images/constellations/const-virgo.jpg`;
+      break;
+    case "Capricorn-const":
+      image = `/images/constellations/const-capricorn.jpg`;
+      break;
+    case "Sagittarius-const":
+      image = `/images/constellations/const-sagittarius.jpg`;
+      break;
+    case "Aries-const":
+      image = `/images/constellations/const-aries.jpg`;
+      break;
+    case "Leo-const":
+      image = `/images/constellations/const-leo.jpg`;
+      break;
+    case "Scorpio-const":
+      image = `/images/constellations/const-scorpio.jpg`;
+      break;
+
+    // Symbols & Signs
+    case "Aquarius-sign":
+      image = `/images/symbols/aquarius-sign.jpg`;
+      break;
+    case "Aries-sign":
+      image = `/images/symbols/aries-sign.jpg`;
+      break;
+    case "Cancer-sign":
+      image = `/images/symbols/cancer-sign.jpg`;
+      break;
+    case "Capricorn-sign":
+      image = "/images/symbols/capricorn-sign.jpg";
+      break;
+    case "Gemini-sign":
+      image = `/images/symbols/gemini-sign.jpg`;
+      break;
+    case "Leo-sign":
+      image = `/images/symbols/leo-sign.jpg`;
+      break;
+    case "Libra-sign":
+      image = `/images/symbols/libra-sign.jpg`;
+      break;
+    case "Pisces-sign":
+      image = `/images/symbols/pisces-sign.jpg`;
+      break;
+    case "Sagittarius-sign":
+      image = `/images/symbols/sagittarius-sign.jpg`;
+      break;
+    case "Scorpio-sign":
+      image = `/images/symbols/scorpio-sign.jpg`;
+      break;
+    case "Taurus-sign":
+      image = `/images/symbols/taurus-sign.jpg`;
+      break;
+    case "Virgo-sign":
+      image = `/images/symbols/virgo-sign.jpg`;
       break;
     default:
       image = "/images/backgrounds/large-galaxy.jpg";
