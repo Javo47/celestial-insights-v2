@@ -45,9 +45,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`flex items-center  justify-between flex-wrap bg-slate-950 p-6`}
+        className={`md:flex md:items-center  md:justify-between md:flex-wrap bg-slate-950 p-6`}
       >
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
+        <div className="justify-center flex items-center flex-shrink-0  text-white mr-6">
           <svg
             className="fill-current h-8 w-8 mr-2"
             width="54"
@@ -61,35 +61,24 @@ const Navbar = () => {
             Celestial Insights
           </span>
         </div>
-        <div className="block lg:hidden">
-          <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-            <svg
-              className="fill-current h-3 w-3"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-sm lg:flex-grow">
+
+        <div className=" flex flex-col justify-center items-center w-full  flex-grow md:flex-row md:flex md:items-center md:w-auto">
+          <div className="text-base tracking-widest lg:flex-grow">
             <Link
               to={`/users/${id}/account`}
-              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+              className="block mt-4 lg:inline-block lg:mt-0 md:border-none border border-white px-10 rounded text-teal-200 hover:text-white mr-4"
             >
               Account
             </Link>
             <Link
               to="#responsive-header"
-              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+              className="block mt-4 lg:inline-block lg:mt-0 md:border-none border border-white px-10 rounded text-teal-200 hover:text-white mr-4"
             >
               HomePage
             </Link>
             <Link
               to="/home-test"
-              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+              className="block mt-4 lg:inline-block text-center lg:mt-0 md:border-none border border-white px-10 rounded text-teal-200 hover:text-white"
             >
               Blog
             </Link>
