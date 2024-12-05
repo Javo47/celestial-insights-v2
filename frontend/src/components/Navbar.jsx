@@ -40,8 +40,6 @@ const Navbar = () => {
       themeColor = "violet";
   }
 
-  console.log(signRes.element);
-
   return (
     <>
       <nav
@@ -71,16 +69,16 @@ const Navbar = () => {
               Account
             </Link>
             <Link
-              to="#responsive-header"
+              to={`/users/${id}`}
               className="block mt-4 lg:inline-block lg:mt-0 md:border-none border border-white px-10 rounded text-teal-200 hover:text-white mr-4"
             >
               HomePage
             </Link>
             <Link
-              to="/home-test"
+              to={`/users/${id}`}
               className="block mt-4 lg:inline-block text-center lg:mt-0 md:border-none border border-white px-10 rounded text-teal-200 hover:text-white"
             >
-              Blog
+              LuckyNumber(Coming Soon)
             </Link>
           </div>
           <div>

@@ -17,9 +17,11 @@ const UserAccountPage = () => {
   const [gender, setGender] = useState("Male");
   const [birthDate, setBirthDate] = useState("1999-01-01");
   const [sign, setSign] = useState();
+  const [signImage, setSignImage] = useState();
+  //const [lNumber, setLNumber] = useState();
 
-  let signImage = "";
-  let lNumber = LuckyNumberFinder(birthDate);
+  //let signImage = "";
+  let lNumber = "0";
 
   useEffect(() => {
     axios
@@ -33,15 +35,16 @@ const UserAccountPage = () => {
         setPassword(result.data.password);
         setGender(result.data.gender);
         setBirthDate(result.data.birthDate);
-        setSign(BirthResolver(birthDate));
+        //setSign(BirthResolver(birthDate));
+        //setSignImage(ImageResolver(sign));
       })
       .catch((err) => console.log(err));
   }, []);
 
-  if (sign != null) {
-    signImage = ImageResolver(sign);
-    console.log(signImage);
-  }
+  useEffect(() => {
+    setSign(BirthResolver(birthDate));
+    setSignImage(ImageResolver(sign));
+  }, [birthDate]);
 
   const updateUser = (e) => {
     e.preventDefault();
@@ -81,7 +84,7 @@ const UserAccountPage = () => {
           <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
             <form onSubmit={updateUser}>
               <h2 className="text-3xl text-center font-semibold mb-6">
-                Account Settings {sign}
+                Account Settings
               </h2>
 
               <div className="mb-4">
@@ -178,7 +181,7 @@ const UserAccountPage = () => {
                   Update Account Information
                 </button>
               </div>
-              <div className="flex items-center justify-between">
+              {/* <div className="flex items-center justify-between">
                 <div className="mb-10 w-6/12">
                   <img
                     className={`bg-center bg-contain h-[300px] items-center mr-1  hover:scale-105 transition ease-in-out text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline`}
@@ -191,7 +194,7 @@ const UserAccountPage = () => {
                     src={signImage}
                   ></img>
                 </div>
-              </div>
+              </div> */}
               <hr className="w-11/12 h-10 m-auto"></hr>
               <div>
                 <button

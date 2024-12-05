@@ -3,9 +3,9 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [userId, setuserId] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userId, setuserId] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -18,12 +18,7 @@ function Login() {
       .then((result) => {
         setuserId(result.data);
         console.log(userId);
-        navigate(`/users/${userId}`);
-
-        // if (result.data === "Success!") {
-        //   axios.get();
-        //   //navigate("/home");
-        // }
+        //navigate(`/users/${userId}`);
       });
   };
 

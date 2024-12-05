@@ -9,6 +9,7 @@ const SignUpPage = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [confPass, setConfPass] = useState();
   const [gender, setGender] = useState("Male");
   const [birthDate, setBirthDate] = useState("1999-01-01");
   let sign = BirthResolver(birthDate);
@@ -19,23 +20,28 @@ const SignUpPage = () => {
   const submitForm = (e) => {
     let id = "0";
     e.preventDefault();
-    axios
-      .post("https://celestial-api-production.vercel.app/createUser", {
-        name,
-        email,
-        password,
-        gender,
-        birthDate,
-        sign,
-        lNumber,
-      })
-      .then((result) => {
-        console.log(result);
-        id = result.data._id;
-        toast.success(`Account successfully created! \u{1F973}`);
-        navigate(`/users/${id}`);
-      })
-      .catch((err) => console.log(err));
+    if (password === confPass) {
+      axios
+        .post("https://celestial-api-production.vercel.app/createUser", {
+          name,
+          email,
+          password,
+          gender,
+          birthDate,
+          sign,
+          lNumber,
+        })
+        .then((result) => {
+          console.log(result);
+          id = result.data._id;
+          toast.success(`Account successfully created! \u{1F973}`);
+          navigate(`/users/${id}`);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      toast.error("Passwords do not match..");
+      console.log("No match");
+    }
   };
 
   return (
@@ -91,6 +97,21 @@ const SignUpPage = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">
+                  Confirm Password
+                </label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  className="border rounded w-full py-2 px-3 mb-2"
+                  placeholder="Confirm Password"
+                  required
+                  value={confPass}
+                  onChange={(e) => setConfPass(e.target.value)}
                 />
               </div>
 

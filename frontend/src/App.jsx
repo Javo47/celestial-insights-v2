@@ -12,9 +12,7 @@ import SignUpPage from "./pages/SignUpPage";
 import MainLayout from "./layouts/MainLayout";
 import UserAccountPage from "./pages/UserAccountPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import MongoTest from "./pages/MongoTest";
 import Login from "./pages/Login";
-import VercelTestPage from "./pages/VercelTestPage";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -32,7 +30,6 @@ const App = () => {
         <Route index element={<Login />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/home-test" element={<HomePage />} />
-        <Route path="/test" element={<MongoTest />} />
         <Route path="/users/:id" element={<HomePage />} />
         <Route path="/users/:id/account" element={<UserAccountPage />} />
         <Route path="/login" element={<Login />} />
