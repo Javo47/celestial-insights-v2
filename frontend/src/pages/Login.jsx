@@ -1,25 +1,71 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [userId, setuserId] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [userId, setuserId] = useState("");
+  // const navigate = useNavigate();
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .post("https://celestial-api-production.vercel.app/login", {
+  //       email,
+  //       password,
+  //     })
+  //     .then((result) => {
+  //       setuserId(result.data);
+  //       console.log(userId);
+  //       navigate(`/users/${userId}`);
+  //     });
+  // };
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [valid, setValid] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let isvalid = true;
+    let validationErrors = {};
+    if (formData.email === "" || formData.email === null) {
+      isvalid = false;
+      validationErrors.email = "Email required! ";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      isvalid = false;
+      validationErrors.email = "Email is not valid! ";
+    }
+
+    if (formData.password === "" || formData.email === null) {
+      isvalid = false;
+      validationErrors.email = "Email required! ";
+    }
+
     axios
-      .post("https://celestial-api-production.vercel.app/login", {
-        email,
-        password,
-      })
+      .get("https://celestial-api-production.vercel.app/getUsers")
       .then((result) => {
-        setuserId(result.data);
-        console.log(userId);
-        navigate(`/users/${userId}`);
-      });
+        result.data.map((user) => {
+          if (user.email === formData.email) {
+            if (user.password === formData.password) {
+              alert("Login successful");
+              navigate(`/users/${user._id}`);
+            } else {
+              isvalid = false;
+              validationErrors.password = "Wrong Password! ";
+            }
+          }
+        });
+        setErrors(validationErrors);
+        setValid(isvalid);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -36,6 +82,11 @@ function Login() {
                 <label className="block text-gray-700 font-bold mb-2">
                   Email
                 </label>
+                {valid ? (
+                  <></>
+                ) : (
+                  <span className="text-red-500">{errors.email}</span>
+                )}
                 <input
                   type="text"
                   id="email"
@@ -43,14 +94,21 @@ function Login() {
                   className="border rounded w-full py-2 px-3 mb-2"
                   placeholder="Enter Email"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  //value={email}
+                  onChange={(event) =>
+                    setFormData({ ...formData, email: event.target.value })
+                  }
                 />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700 font-bold mb-2">
                   Password
                 </label>
+                {valid ? (
+                  <></>
+                ) : (
+                  <span className="text-red-500">{errors.password}</span>
+                )}
                 <input
                   type="password"
                   id="password"
@@ -58,8 +116,10 @@ function Login() {
                   className="border rounded w-full py-2 px-3 mb-2"
                   placeholder="Enter Password"
                   required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  //value={password}
+                  onChange={(event) =>
+                    setFormData({ ...formData, password: event.target.value })
+                  }
                 />
               </div>
 
