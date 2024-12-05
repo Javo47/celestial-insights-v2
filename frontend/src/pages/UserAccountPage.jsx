@@ -5,6 +5,7 @@ import BirthResolver from "../components/BirthResolver";
 import LuckyNumberFinder from "../components/LuckyNumberFinder";
 import ImageResolver from "../components/ImageResolver";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const UserAccountPage = () => {
   const navigate = useNavigate();
@@ -22,23 +23,29 @@ const UserAccountPage = () => {
 
   //let signImage = "";
   let lNumber = "0";
+  console.log(typeof id);
 
   useEffect(() => {
-    axios
-      .get(`https://celestial-api-production.vercel.app/getUser/${id}`)
-      .then((result) => {
-        console.log(result);
-        setUserId(result.data._id);
-        console.log(userId);
-        setName(result.data.name);
-        setEmail(result.data.email);
-        setPassword(result.data.password);
-        setGender(result.data.gender);
-        setBirthDate(result.data.birthDate);
-        //setSign(BirthResolver(birthDate));
-        //setSignImage(ImageResolver(sign));
-      })
-      .catch((err) => console.log(err));
+    if (id != "undefined") {
+      axios
+        .get(`https://celestial-api-production.vercel.app/getUser/${id}`)
+        .then((result) => {
+          console.log(result);
+          setUserId(result.data._id);
+          console.log(userId);
+          setName(result.data.name);
+          setEmail(result.data.email);
+          setPassword(result.data.password);
+          setGender(result.data.gender);
+          setBirthDate(result.data.birthDate);
+          //setSign(BirthResolver(birthDate));
+          //setSignImage(ImageResolver(sign));
+        })
+        .catch((err) => console.log(err));
+    } else {
+      toast.error("You must be signed in to access account settings..");
+      navigate("/login");
+    }
   }, []);
 
   useEffect(() => {
@@ -49,7 +56,7 @@ const UserAccountPage = () => {
   const updateUser = (e) => {
     e.preventDefault();
     axios
-      .put(`/api/updateUser/${id}`, {
+      .put(`https://celestial-api-production.vercel.app/updateUser/${id}`, {
         name,
         email,
         gender,
@@ -61,13 +68,14 @@ const UserAccountPage = () => {
         console.log(result);
         const newId = result.data._id;
         navigate(`/users/${newId}`);
+        toast.success("Your account information has been updated! \u{1F973}");
       })
       .catch((err) => console.log(err));
   };
 
   const handleDelete = (id) => {
     axios
-      .delete(`/api/deleteUser/${id}`)
+      .delete(`https://celestial-api-production.vercel.app/deleteUser/${id}`)
       .then((res) => {
         console.log(res);
         navigate("/sign-up");

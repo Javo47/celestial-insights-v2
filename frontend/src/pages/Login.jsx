@@ -60,6 +60,10 @@ function Login() {
               isvalid = false;
               validationErrors.password = "Wrong Password! ";
             }
+          } else {
+            isvalid = false;
+            validationErrors.email =
+              "The email is unrecognized. Please create an account.";
           }
         });
         setErrors(validationErrors);

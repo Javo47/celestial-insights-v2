@@ -6,25 +6,6 @@ const UserDetails = () => {
   const { id } = useParams();
   const [user, setUser] = useState();
 
-  //   useEffect(() => {
-  //     const fetchUser = async () => {
-  //       try {
-  //         const res = await fetch(`/api/users/${id}`);
-  //         const data = await res.json();
-  //         //console.log(data);
-  //         setUser(data);
-  //       } catch (error) {
-  //         console.log("Error fetching data", error);
-  //       } finally {
-  //         setLoading(false);
-  //       }
-  //     };
-
-  //     fetchUser();
-  //   }, []);
-
-  //   return user;
-  // };
   useEffect(() => {
     const fetchUser = async () => {
       axios
