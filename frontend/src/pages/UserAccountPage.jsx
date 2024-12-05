@@ -68,17 +68,20 @@ const UserAccountPage = () => {
         console.log(result);
         const newId = result.data._id;
         navigate(`/users/${newId}`);
-        toast.success("Your account information has been updated! \u{1F973}");
+        toast.success("Your account information has been updated! \u{1F60E}");
       })
       .catch((err) => console.log(err));
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = (e) => {
     axios
       .delete(`https://celestial-api-production.vercel.app/deleteUser/${id}`)
       .then((res) => {
         console.log(res);
         navigate("/sign-up");
+        success.toast(
+          "Your account has successfully been deleted. Goodbye.. \u{1F622} "
+        );
       })
       .catch((err) => console.log(err));
   };
