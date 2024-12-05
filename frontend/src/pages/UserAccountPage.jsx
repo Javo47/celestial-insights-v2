@@ -74,16 +74,24 @@ const UserAccountPage = () => {
   };
 
   const handleDelete = (e) => {
-    axios
-      .delete(`https://celestial-api-production.vercel.app/deleteUser/${id}`)
-      .then((res) => {
-        console.log(res);
-        navigate("/sign-up");
-        success.toast(
-          "Your account has successfully been deleted. Goodbye.. \u{1F622} "
-        );
-      })
-      .catch((err) => console.log(err));
+    let confirmDelete = prompt(
+      'To confirm that you would like to delete your account, type "DELETE"'
+    );
+
+    if (confirmDelete === "DELETE") {
+      axios
+        .delete(`https://celestial-api-production.vercel.app/deleteUser/${id}`)
+        .then((res) => {
+          console.log(res);
+          navigate("/sign-up");
+          toast.success(
+            "Your account has successfully been deleted. Goodbye.. \u{1F622} "
+          );
+        })
+        .catch((err) => console.log(err));
+    } else {
+      toast.success("We're glad you're still with us! ");
+    }
   };
 
   //const test = ImageResolver(sign);
@@ -187,7 +195,7 @@ const UserAccountPage = () => {
               <div className="mb-10">
                 <button
                   className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
-                  type="submit"
+                  onClick={(e) => updateUser(userId)}
                 >
                   Update Account Information
                 </button>
