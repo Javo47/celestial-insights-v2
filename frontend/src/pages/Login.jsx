@@ -18,7 +18,7 @@ function Login() {
       .then((result) => {
         setuserId(result.data);
         console.log(userId);
-        //navigate(`/users/${userId}`);
+        navigate(`/users/${userId}`);
       });
   };
 
